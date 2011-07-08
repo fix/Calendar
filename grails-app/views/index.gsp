@@ -3,47 +3,6 @@
         <title>Welcome to Grails Calendar</title>
         <meta name="layout" content="main" />
         <style type="text/css" media="screen">
-
-        #nav {
-            margin-top:20px;
-            margin-left:30px;
-            width:228px;
-            float:left;
-
-        }
-        .homePagePanel * {
-            margin:0px;
-        }
-        .homePagePanel .panelBody ul {
-            list-style-type:none;
-            margin-bottom:10px;
-        }
-        .homePagePanel .panelBody h1 {
-            text-transform:uppercase;
-            font-size:1.1em;
-            margin-bottom:10px;
-        }
-        .homePagePanel .panelBody {
-            background: url(images/leftnav_midstretch.png) repeat-y top;
-            margin:0px;
-            padding:15px;
-        }
-        .homePagePanel .panelBtm {
-            background: url(images/leftnav_btm.png) no-repeat top;
-            height:20px;
-            margin:0px;
-        }
-
-        .homePagePanel .panelTop {
-            background: url(images/leftnav_top.png) no-repeat top;
-            height:11px;
-            margin:0px;
-        }
-        h2 {
-            margin-top:15px;
-            margin-bottom:15px;
-            font-size:1.2em;
-        }
         #pageBody {
             margin-left:280px;
             margin-right:20px;
@@ -51,13 +10,16 @@
         }
         </style>
     </head>
+    <div id='who' style='position:absolute; top: 8px; right: 100px;font-size: 14px;'><sec:ifLoggedIn><sec:loggedInUserInfo field="username"/> | <a href="${createLink(controller:'logout')}">logout</a></sec:ifLoggedIn><sec:ifNotLoggedIn><a href="${createLink(controller:'register')}">register</a> or <a href="${createLink(controller:'login')}">login</a></sec:ifNotLoggedIn></div> 
     <div id="pageBody">
         <p>This is a proof of concept to use the grails Events-Calendar plugin</p>
-        you can find the plugin available on <a href="https://github.com/fix/grails-events-calendar">GitHub</a> as well as the source of this application
+        you can find the plugin available on <a href="https://github.com/fix/grails-events-calendar">GitHub</a> as well as the source of <a href="https://github.com/fix/Calendar">this application</a>
+        <br/><br/>
+        	You need first to <a href="${createLink(controller:'register')}">register</a> or <a href="${createLink(controller:'login')}">login</a>
+        <br/><br/>
+        Then you can access the list of created calendars <a href="${createLink(controller:'calendar', action:'list')}">here</a>
         <br/>
-        <br/>
-        You can access the list of created calendars <a href="${createLink(controller:'calendar', action:'list')}">here</a>
-        
+        TIP: Try drag&drop on calendar to create or update events on different views (month, week, day)
         </div>
         
         

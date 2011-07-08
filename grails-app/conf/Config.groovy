@@ -102,11 +102,13 @@ grails {
 	mail {
 	  host = "smtp.gmail.com"
 	  port = 465
-	  username = "yourusermail@gmail.com"
-	  password = "yourpassword"
+	  username = "name@gmail.com"
+	  password = "secret"
 	  props = ["mail.smtp.auth":"true",
 			   "mail.smtp.socketFactory.port":"465",
 			   "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
 			   "mail.smtp.socketFactory.fallback":"false"]
 	}
  }
+grails.plugins.springsecurity.rememberMe.persistent = true
+grails.plugins.springsecurity.rememberMe.persistentToken.domainClassName = 'com.calendar.PersistentLogin'
