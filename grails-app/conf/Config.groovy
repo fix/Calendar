@@ -88,3 +88,25 @@ log4j = {
 
     warn   'org.mortbay.log'
 }
+
+
+
+// Added by the Spring Security Core plugin:
+grails.plugins.springsecurity.userLookup.userDomainClassName = 'com.calendar.User'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'com.calendar.UserRole'
+grails.plugins.springsecurity.authority.className = 'com.calendar.Role'
+grails.plugins.springsecurity.requestMap.className = 'com.calendar.RequestMap'
+grails.plugins.springsecurity.securityConfigType = 'Requestmap'
+
+grails {
+	mail {
+	  host = "smtp.gmail.com"
+	  port = 465
+	  username = "yourusermail@gmail.com"
+	  password = "yourpassword"
+	  props = ["mail.smtp.auth":"true",
+			   "mail.smtp.socketFactory.port":"465",
+			   "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
+			   "mail.smtp.socketFactory.fallback":"false"]
+	}
+ }
