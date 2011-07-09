@@ -31,12 +31,6 @@ class CalendarFilters {
 			}
 		}
 		
-		create(controller:'calendar', action:'create'){
-			before = {
-				return aclUtilService.hasPermission(springSecurityService.authentication, com.fullcalendar.grails.Calendar.get(params.id), BasePermission.ADMINISTRATION)
-			}
-		}
-		
 		update(controller:'calendar', action:'update'){
 			before = {
 				return aclUtilService.hasPermission(springSecurityService.authentication, com.fullcalendar.grails.Calendar.get(flash.calendarid), BasePermission.ADMINISTRATION)
